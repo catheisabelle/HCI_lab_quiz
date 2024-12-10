@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Small Web Application</title>
+</head>
+<body>
+    <h1>Small Web Application</h1>
+    <input type="text" id="item-input" placeholder="Enter an item">
+    <button id="add-button">Add</button>
+    <div id="error-message"></div>
+    <ul id="item-list"></ul>
+
+    <script>
+        const addButton = document.getElementById('add-button');
+        const itemInput = document.getElementById('item-input');
+        const itemList = document.getElementById('item-list');
+        const errorMessage = document.getElementById('error-message');
+
+        addButton.addEventListener('click', function() {
+            const itemValue = itemInput.value.trim();
+
+            errorMessage.textContent = '';
+
+            if (itemValue === '') {
+                errorMessage.textContent = 'Error!';
+            } else {
+                const listItem = document.createElement('li');
+                listItem.textContent = itemValue;
+                itemList.appendChild(listItem);
+
+                itemInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>

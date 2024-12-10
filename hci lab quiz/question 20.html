@@ -1,0 +1,19 @@
+<html>
+    <script>
+        function getNames(students) {
+            const highScores = students.filter(student => student.score > 75);
+            const names = highScores.map(student => student.name).sort();
+            return names;
+        }
+
+        /* example input */
+        const students = [
+            {name: 'Alice', score: 90},
+            {name: 'Bob', score: 70},
+            {name: 'Charlie', score: 85},
+        ]
+
+        const result = getNames(students);
+        console.log(result);
+    </script>
+</html>
